@@ -7,18 +7,55 @@
 
 .PopUp {
   height: 70%;
-  width: 50%;
+  width: 60%;
   background-color: rgb(122, 38, 38);
   z-index: 200;
   position: absolute;
-  bottom: 15%;
-  left: 25%;
+  bottom: 10%;
+  left: 20%;
 }
 
 .Item {
   z-index: 300;
-  height: 80%;
-  width: 80%;
-  margin: 10%;
+  height: 75%;
+  width: 100%;
+  margin: auto;
   background-color: cadetblue;
+  font-size: 200%;
+}
+
+.EditCart {
+  height: 25%;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.EditCart button {
+  margin: 0 2%;
+  height: 40px;
+  width: 40px;
+  border-radius: 35%;
+  background-color: white;
+  border: none;
+}
+
+.Quantity {
+  background-color: teal;
+  height: 40px;
+  width: 50px;
+  text-align: center;
+  font-size: 100%;
+}
+
+h3 {
+  cursor: pointer;
+  border: 1px white solid;
+  height: 33px;
+  padding-top: 6px;
+}
+
+h3:hover {
+  color: white;
+  background-color: grey;
 }

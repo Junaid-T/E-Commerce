@@ -4,7 +4,7 @@ import image from "../../../Assets/TEMP_1.svg";
 import { StoreContext } from "../../../Contexts/store";
 
 const Product = (props) => {
-  const [AllProducts, activeItem, setActiveItem] = useContext(StoreContext);
+  const [, , setActiveItem] = useContext(StoreContext);
 
   const handleClick = (event) => {
     setActiveItem(props.id);
