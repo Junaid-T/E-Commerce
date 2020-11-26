@@ -1,0 +1,34 @@
+.Navigation {
+  height: 15%;
+  width: 100vw;
+  background-color: navy;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.Logo {
+  background-color: black;
+  height: 100%;
+}
+
+.LinkContainer {
+  height: 40%;
+  width: 50%;
+  list-style: none;
+  display: flex;
+  margin-bottom: 0;
+}
+
+.LinkContainer li {
+  padding: 0 4%;
+  font-size: 120%;
+  width: 25%;
+  height: 100%;
+  color: wheat;
+}
+
+.SearchTEMP {
+  height: 40%;
+  width: 20%;
+}

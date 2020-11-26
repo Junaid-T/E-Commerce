@@ -1,0 +1,22 @@
+.Container {
+  height: 30%;
+  width: 100%;
+  border: green 3px solid;
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  cursor: pointer;
+}
+
+.Img {
+  height: 60%;
+  display: inline-block;
+}
+
+.Name {
+  font-size: 130%;
+}
+
+.Price {
+  font-size: 90%;
+}

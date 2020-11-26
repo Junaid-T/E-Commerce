@@ -1,0 +1,24 @@
+.Container {
+  visibility: hidden;
+}
+.ContainerShow {
+  visibility: visible;
+}
+
+.PopUp {
+  height: 70%;
+  width: 50%;
+  background-color: rgb(122, 38, 38);
+  z-index: 200;
+  position: absolute;
+  bottom: 15%;
+  left: 25%;
+}
+
+.Item {
+  z-index: 300;
+  height: 80%;
+  width: 80%;
+  margin: 10%;
+  background-color: cadetblue;
+}
