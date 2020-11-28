@@ -4,12 +4,16 @@ import Backdrop from "./Backdrop/Backdrop";
 import { StoreContext } from "../../Contexts/store";
 
 const ProductPopUp = (props) => {
-  const [AllProducts, activeItem] = useContext(StoreContext);
-  const [quantity, SetQuantity] = useState(1);
+  const [allProducts, activeItem, setActiveItem, cart, setCart] = useContext(
+    StoreContext
+  );
+  let [quantity, SetQuantity] = useState(1);
 
+  ///////////////////////////////////////////////////////////
+  // Set Popup
   let selected = null;
   if (activeItem) {
-    const item = Object.values(AllProducts).filter((o) => {
+    const item = Object.values(allProducts).filter((o) => {
       return o.id === activeItem;
     });
 
@@ -25,13 +29,32 @@ const ProductPopUp = (props) => {
   const show = activeItem ? classes.ContainerShow : classes.Container;
 
   const handleQuantity = (event) => {
-    let quanity = parseInt(document.getElementById("Quantity").value);
     if (event.target.id === "+") {
-      SetQuantity((quanity += 1));
+      SetQuantity(quantity + 1);
     } else {
-      if (quanity === 1) return;
-      SetQuantity((quanity -= 1));
+      if (quantity === 1) return;
+      SetQuantity(quantity - 1);
     }
+  };
+
+  ///////////////////////////////////////////////////////////
+  // Add to cart
+
+  const addToCart = () => {
+    let newOrder = { id: activeItem, quantity: quantity };
+    let newCart = [...cart, newOrder];
+    if (newCart.length > 1) {
+      for (let i = 0; i < newCart.length - 1; i++) {
+        if (newCart[i].id === newOrder.id) {
+          newCart[i].quantity += newOrder.quantity;
+          newCart.pop();
+        }
+      }
+    }
+
+    setCart(newCart);
+    setActiveItem(null);
+    SetQuantity(1);
   };
 
   return (
@@ -43,16 +66,13 @@ const ProductPopUp = (props) => {
           <button className={classes.Minus} id="-" onClick={handleQuantity}>
             -
           </button>
-          <input
-            id="Quantity"
-            className={classes.Quantity}
-            value={quantity}
-            readOnly
-          />
+          <div id="Quantity" className={classes.Quantity}>
+            {quantity}
+          </div>
           <button className={classes.Plus} id="+" onClick={handleQuantity}>
             +
           </button>
-          <h3>Add to cart</h3>
+          <h3 onClick={addToCart}>Add to cart</h3>
         </div>
       </div>
     </div>

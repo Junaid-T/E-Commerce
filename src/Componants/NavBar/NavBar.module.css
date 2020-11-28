@@ -23,9 +23,22 @@
 .LinkContainer li {
   padding: 0 4%;
   font-size: 120%;
-  width: 25%;
   height: 100%;
   color: wheat;
+}
+
+.LinkContainer li:hover {
+  color: black;
+}
+
+.Link {
+  margin: 0 2%;
+  width: 25%;
+  text-decoration: none;
+}
+
+.Link:hover {
+  background-color: lightblue;
 }
 
 .SearchTEMP {

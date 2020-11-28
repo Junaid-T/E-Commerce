@@ -1,0 +1,107 @@
+.Container {
+  height: 75%;
+  width: 70%;
+  border: navy 2px solid;
+  margin: 2% auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ItemsContainer {
+  overflow: scroll;
+  height: 90%;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 4%;
+  border: 2px black solid;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.Container h4 {
+  font-size: 250%;
+  margin: 1% 0;
+}
+
+.ItemContainer {
+  border: 2px black solid;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 17%;
+  margin: 1% auto;
+}
+
+.ItemContainer div {
+  padding-top: 3%;
+}
+
+.Header {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 2% auto;
+  border: 2px black solid;
+}
+
+/* HEADERs*/
+
+.ImgHeader {
+  width: 25%;
+  font-size: 150%;
+}
+
+.ItemHeader {
+  width: 20%;
+  margin-right: 9px;
+  padding-left: 2px;
+}
+
+.QuantityHeader {
+  width: 20%;
+}
+
+.TotalHeader {
+  width: 20%;
+}
+
+/* CART*/
+
+.Img {
+  font-size: 170%;
+  width: 30%;
+}
+.Name {
+  font-size: 170%;
+  width: 20%;
+}
+
+.Quantity {
+  font-size: 170%;
+  width: 20%;
+}
+
+.Cost {
+  font-size: 170%;
+  width: 20%;
+}
+/*
+.Total {
+  font-size: 170%;
+  width: 20%;
+  border: 2px black solid;
+  position: sticky;
+  top: 100%;
+  left: 70%;
+} */
+.Total {
+  font-size: 170%;
+  width: 20%;
+  border: 2px black solid;
+  position: sticky;
+  bottom: 7%;
+  left: 64%;
+}

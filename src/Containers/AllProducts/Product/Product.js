@@ -13,7 +13,7 @@ const Product = (props) => {
     <div className={classes.Container} onClick={handleClick} id={props.id}>
       <img className={classes.Img} alt="" src={image} />
       <div className={classes.Name}>{props.name}</div>
-      <div className={classes.Price}>{props.price}</div>
+      <div className={classes.Price}>£{props.price}</div>
     </div>
   );
 };
