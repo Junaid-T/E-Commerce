@@ -6,6 +6,26 @@ const Cart = () => {
   const [allProducts, , , cart, setCart, total, setTotal] = useContext(
     StoreContext
   );
+
+  const handleClick = (event) => {
+    const targetID = parseInt(event.target.parentElement.parentElement.id);
+    const action = event.target.id;
+    const newCart = [...cart];
+
+    for (let i = 0; i < newCart.length; i++) {
+      if (newCart[i].id === targetID) {
+        if (action === "increase") {
+          newCart[i].quantity += 1;
+        } else {
+          if (newCart[i].quantity === 1) return;
+          newCart[i].quantity -= 1;
+        }
+      }
+    }
+
+    setCart(newCart);
+  };
+
   let newTotal = 0;
   const extractItem = (item) => {
     for (const product in allProducts) {
@@ -13,10 +33,26 @@ const Cart = () => {
         newTotal +=
           parseInt(item.quantity) * parseInt(allProducts[product].Price);
         return (
-          <div className={classes.ItemContainer} key={item.id}>
+          <div className={classes.ItemContainer} key={item.id} id={item.id}>
             <img className={classes.Img} alt="" />
             <div className={classes.Name}>{allProducts[product].Name}</div>
-            <div className={classes.Quantity}>{item.quantity}</div>
+            <div className={classes.Quantity}>
+              <button
+                id="decrease"
+                className={classes.Decrease}
+                onClick={handleClick}
+              >
+                -
+              </button>
+              {item.quantity}
+              <button
+                id="increase"
+                className={classes.Increase}
+                onClick={handleClick}
+              >
+                +
+              </button>
+            </div>
             <div className={classes.Cost}>
               £{parseInt(item.quantity) * parseInt(allProducts[product].Price)}
             </div>
@@ -28,12 +64,11 @@ const Cart = () => {
 
   useEffect(() => {
     setTotal(newTotal);
-  }, [cart]);
+  });
 
   const renderItems = cart.map((item) => {
     return extractItem(item);
   });
-  //console.log(renderItems);
 
   return (
     <div className={classes.Container}>
@@ -51,8 +86,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-// for in loop
-// for properties in allproducts
-// if properties.id === id of item
-// return JSX

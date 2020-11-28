@@ -13,7 +13,7 @@ const navBar = () => {
         <Link to="/cart" className={classes.Link}>
           <li>Cart</li>
         </Link>
-        <Link className={classes.Link}>
+        <Link to="" className={classes.Link}>
           <li>CONTACT US</li>
         </Link>
         <li>Log IN/OUT</li>
