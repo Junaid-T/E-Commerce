@@ -57,9 +57,15 @@ const ProductPopUp = (props) => {
     SetQuantity(1);
   };
 
+  ////////////////////////////////
+  // Close backdrop
+  const closeBackdrop = () => {
+    setActiveItem(null);
+  };
+
   return (
     <div className={show}>
-      <Backdrop />
+      <Backdrop closeBackdrop={closeBackdrop} />
       <div className={classes.PopUp}>
         {selected}
         <div className={classes.EditCart}>

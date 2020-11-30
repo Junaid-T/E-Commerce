@@ -3,13 +3,8 @@ import classes from "./Backdrop.module.css";
 import { StoreContext } from "../../../Contexts/store";
 
 const Backdrop = (props) => {
-  const [AllProducts, activeItem, setActiveItem] = useContext(StoreContext);
-
-  const handleClick = () => {
-    setActiveItem(null);
-  };
   return (
-    <div className={classes.Backdrop} onClick={handleClick}>
+    <div className={classes.Backdrop} onClick={props.closeBackdrop}>
       {props.children}
     </div>
   );

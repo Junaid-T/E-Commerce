@@ -81,6 +81,7 @@ const Cart = () => {
       </ul>
       <div className={classes.ItemsContainer}>{renderItems}</div>
       <div className={classes.Total}>£{total}</div>
+      <div className={classes.Checkout}>Checkout</div>
     </div>
   );
 };

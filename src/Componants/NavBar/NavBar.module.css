@@ -17,12 +17,14 @@
   width: 50%;
   list-style: none;
   display: flex;
+  justify-content: center;
   margin-bottom: 0;
 }
 
 .LinkContainer li {
   padding: 0 4%;
-  font-size: 120%;
+  margin: 0 10%;
+  font-size: 160%;
   height: 100%;
   color: wheat;
 }
@@ -41,7 +43,16 @@
   background-color: lightblue;
 }
 
-.SearchTEMP {
-  height: 40%;
-  width: 20%;
+ion-icon {
+  height: 35px;
+  width: 35px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+ion-icon:hover {
+  color: white;
+  background-color: orange;
+  cursor: pointer;
 }

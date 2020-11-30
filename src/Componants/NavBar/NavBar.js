@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./NavBar.module.css";
 import { Link } from "react-router-dom";
+import { AuthorizedContext } from "../../Contexts/Authorized";
 
-const navBar = () => {
+const NavBar = () => {
+  const [, , , setPopup] = useContext(AuthorizedContext);
+
+  const openPopup = () => {
+    setPopup(true);
+  };
+
   return (
     <div className={classes.Navigation}>
       <img alt="LOGO_TEMP" className={classes.Logo} />
@@ -13,14 +20,14 @@ const navBar = () => {
         <Link to="/cart" className={classes.Link}>
           <li>Cart</li>
         </Link>
-        <Link to="" className={classes.Link}>
-          <li>CONTACT US</li>
-        </Link>
-        <li>Log IN/OUT</li>
       </ul>
-      <div className={classes.SearchTEMP}>SEARCH BAR</div>
+      <ion-icon
+        name="person-outline"
+        className={classes.Login}
+        onClick={openPopup}
+      ></ion-icon>
     </div>
   );
 };
 
-export default navBar;
+export default NavBar;

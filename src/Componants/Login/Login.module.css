@@ -1,0 +1,23 @@
+.Container {
+  visibility: hidden;
+}
+.ContainerShow {
+  visibility: visible;
+}
+
+.PopUp {
+  height: 85%;
+  width: 60%;
+  background-color: grey;
+  z-index: 200;
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+}
+
+.Switch {
+  height: 10%;
+  width: 40%;
+  font-size: 90%;
+  margin: 5% 0;
+}

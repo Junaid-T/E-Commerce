@@ -11,10 +11,10 @@
 .ItemsContainer {
   box-sizing: border-box;
   overflow: scroll;
-  height: 90%;
+  height: 50%;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 4%;
+  margin-bottom: 2%;
   border: 2px black solid;
 }
 ::-webkit-scrollbar {
@@ -36,7 +36,7 @@
 }
 
 .ItemContainer div {
-  padding-top: 1.5%;
+  padding-top: 1;
 }
 
 .Header {
@@ -45,9 +45,9 @@
   display: flex;
   justify-content: space-around;
   width: 80%;
-  margin: 2% auto;
+  margin: 0% auto 0.5%;
   border: 2px black solid;
-  font-size: 170%;
+  font-size: 150%;
 }
 
 /* HEADERs*/
@@ -110,6 +110,7 @@
   top: 100%;
   left: 70%;
 } */
+
 .Total {
   font-size: 170%;
   width: 20%;
@@ -117,4 +118,17 @@
   position: sticky;
   bottom: 7%;
   left: 64%;
+}
+.Checkout {
+  font-size: 170%;
+  width: 20%;
+  border: 2px black solid;
+  position: sticky;
+  margin-top: 1%;
+  left: 64%;
+}
+
+.Checkout:hover {
+  cursor: pointer;
+  background-color: rebeccapurple;
 }
