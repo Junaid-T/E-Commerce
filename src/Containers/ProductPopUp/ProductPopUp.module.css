@@ -22,13 +22,33 @@
   margin: auto;
   background-color: cadetblue;
   font-size: 200%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.Item div {
+  width: 40%;
+  height: 20%;
+
+  margin-bottom: 5%;
+}
+
+.Img {
+  height: 100%;
+  width: 50%;
+}
+
+.Name {
+  font-size: 200%;
 }
 
 .EditCart {
   height: 25%;
   width: 30%;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1% auto;
 }
 
 .EditCart button {
@@ -51,8 +71,8 @@
 h3 {
   cursor: pointer;
   border: 1px white solid;
-  height: 33px;
-  padding-top: 6px;
+  height: 33%;
+  padding-top: 1%;
 }
 
 h3:hover {

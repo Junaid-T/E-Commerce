@@ -31,11 +31,15 @@ const Cart = () => {
     for (const product in allProducts) {
       if (allProducts[product].id === item.id) {
         newTotal +=
-          parseInt(item.quantity) * parseInt(allProducts[product].Price);
+          parseInt(item.quantity) * parseInt(allProducts[product].price);
         return (
           <div className={classes.ItemContainer} key={item.id} id={item.id}>
-            <img className={classes.Img} alt="" />
-            <div className={classes.Name}>{allProducts[product].Name}</div>
+            <img
+              className={classes.Img}
+              alt=""
+              src={allProducts[product].image}
+            />
+            <div className={classes.Name}>{allProducts[product].name}</div>
             <div className={classes.Quantity}>
               <button
                 id="decrease"
@@ -54,7 +58,7 @@ const Cart = () => {
               </button>
             </div>
             <div className={classes.Cost}>
-              £{parseInt(item.quantity) * parseInt(allProducts[product].Price)}
+              £{parseInt(item.quantity) * parseInt(allProducts[product].price)}
             </div>
           </div>
         );

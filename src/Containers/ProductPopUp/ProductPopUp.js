@@ -19,9 +19,10 @@ const ProductPopUp = (props) => {
 
     selected = (
       <div className={classes.Item}>
-        <img className={classes.Img} alt="" />
-        <div className={classes.Name}>{item[0].Name}</div>
-        <div className={classes.Price}>{item[0].Price}</div>
+        <img className={classes.Img} alt="" src={item[0].image} />
+        <div className={classes.Name}>{item[0].name}</div>
+        <div className={classes.Price}>£{item[0].price}</div>
+        <div className={classes.Description}>{item[0].description}</div>
       </div>
     );
   }
