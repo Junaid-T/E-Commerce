@@ -33,11 +33,19 @@ const LoginPopUp = (props) => {
       ? "Don't have an account, click here to sign up!"
       : "Already have an account, click here to log in!";
 
+  const handleGuest = () => {
+    setAuthorized(true);
+    setPopup(false);
+  };
+
   return (
     <div className={show}>
       <Backdrop closeBackdrop={closeBackdrop} />
       <div className={classes.PopUp}>
         {form}
+        <button className={classes.Guest} onClick={handleGuest}>
+          Just testing? Click here to sign in
+        </button>
         <button className={classes.Switch} onClick={switchMode}>
           {switchMessage}
         </button>

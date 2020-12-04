@@ -1,6 +1,6 @@
 .Container {
-  height: 40%;
-  width: 45%;
+  height: 55%;
+  width: 25%;
   margin: 2%;
   cursor: pointer;
   background-color: lightblue;
@@ -9,30 +9,26 @@
 
 .Img {
   height: 50%;
-  width: 40%;
+  width: 100%;
   display: inline-block;
-  background-color: rebeccapurple;
-  position: relative;
-  right: 5%;
 }
 
 .Name {
-  font-size: 150%;
-  margin-bottom: 3%;
+  font-size: 200%;
+  float: left;
+  width: 50%;
 }
 
 .Price {
-  font-size: 120%;
   width: 50%;
-  height: 20%;
+  font-size: 120%;
   float: right;
-  position: relative;
-  bottom: 12%;
 }
 
 .Text {
+  float: left;
   font-size: 120%;
-  width: 50%;
+  width: 100%;
   height: 30%;
-  float: right;
+  margin-top: 5%;
 }

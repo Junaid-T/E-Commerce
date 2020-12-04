@@ -1,14 +1,13 @@
 .Navigation {
   height: 15%;
   width: 100vw;
-  background-color: navy;
+  background-color: lightblue;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
 }
 
 .Logo {
-  background-color: black;
   height: 100%;
 }
 
@@ -26,7 +25,7 @@
   margin: 0 10%;
   font-size: 160%;
   height: 100%;
-  color: wheat;
+  color: rgb(70, 28, 28);
 }
 
 .LinkContainer li:hover {
@@ -35,20 +34,22 @@
 
 .Link {
   margin: 0 2%;
-  width: 25%;
+  width: 30%;
   text-decoration: none;
 }
 
 .Link:hover {
-  background-color: lightblue;
+  background-color: grey;
 }
 
-ion-icon {
+.Navigation ion-icon {
   height: 35px;
   width: 35px;
   color: black;
   border: 2px solid black;
   border-radius: 50%;
+  position: relative;
+  left: 30%;
 }
 
 ion-icon:hover {

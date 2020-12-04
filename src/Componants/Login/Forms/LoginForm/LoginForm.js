@@ -17,7 +17,7 @@ const LoginForm = () => {
         placeholder="Password"
         required
       ></input>
-      <button className={classes.Submit}>Submit</button>
+      <button className={classes.Submit}>Log In</button>
     </form>
   );
 };

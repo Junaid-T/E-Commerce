@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import classes from "./NavBar.module.css";
 import { Link } from "react-router-dom";
 import { AuthorizedContext } from "../../Contexts/Authorized";
+import Logo from "../../Assets/Logo/logo_transparent.png";
 
 const NavBar = () => {
   const [, , , setPopup] = useContext(AuthorizedContext);
@@ -12,10 +13,10 @@ const NavBar = () => {
 
   return (
     <div className={classes.Navigation}>
-      <img alt="LOGO_TEMP" className={classes.Logo} />
+      <img src={Logo} alt="Logo" className={classes.Logo} />
       <ul className={classes.LinkContainer}>
         <Link to="/" className={classes.Link}>
-          <li>PRODUCTS</li>
+          <li>Products</li>
         </Link>
         <Link to="/cart" className={classes.Link}>
           <li>Cart</li>

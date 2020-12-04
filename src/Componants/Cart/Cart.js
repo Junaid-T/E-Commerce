@@ -1,12 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import classes from "./Cart.module.css";
 import { StoreContext } from "../../Contexts/store";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [allProducts, , , cart, setCart, total, setTotal] = useContext(
     StoreContext
   );
 
+  // This function first copies all the contents of the cart.
+  // It then iterates through to see which item was clicked on
+  // It then performs the selected action.
   const handleClick = (event) => {
     const targetID = parseInt(event.target.parentElement.parentElement.id);
     const action = event.target.id;
@@ -16,9 +20,11 @@ const Cart = () => {
       if (newCart[i].id === targetID) {
         if (action === "increase") {
           newCart[i].quantity += 1;
-        } else {
+        } else if (action === "decrease") {
           if (newCart[i].quantity === 1) return;
           newCart[i].quantity -= 1;
+        } else if (action === "remove") {
+          newCart.pop(i);
         }
       }
     }
@@ -27,6 +33,9 @@ const Cart = () => {
   };
 
   let newTotal = 0;
+  // This makes an item for each item in cart
+  // using the id, it compares the current item against all the possible products
+  // And return a div containing all the needed information.
   const extractItem = (item) => {
     for (const product in allProducts) {
       if (allProducts[product].id === item.id) {
@@ -56,6 +65,11 @@ const Cart = () => {
               >
                 +
               </button>
+              <ion-icon
+                name="trash-outline"
+                id="remove"
+                onClick={handleClick}
+              ></ion-icon>
             </div>
             <div className={classes.Cost}>
               £{parseInt(item.quantity) * parseInt(allProducts[product].price)}
@@ -76,7 +90,6 @@ const Cart = () => {
 
   return (
     <div className={classes.Container}>
-      <h4>Your Cart</h4>
       <ul className={classes.Header}>
         <li className={classes.ImgHeader}></li>
         <li className={classes.ItemHeader}>Item</li>
@@ -85,7 +98,12 @@ const Cart = () => {
       </ul>
       <div className={classes.ItemsContainer}>{renderItems}</div>
       <div className={classes.Total}>£{total}</div>
-      <div className={classes.Checkout}>Checkout</div>
+      <Link
+        to={cart.length !== 0 ? "/cart/checkout" : "/cart"}
+        className={classes.Checkout}
+      >
+        Checkout
+      </Link>
     </div>
   );
 };

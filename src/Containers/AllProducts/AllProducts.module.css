@@ -1,9 +1,9 @@
 .Container {
   height: 75%;
-  width: 80%;
-  border: navy 2px solid;
+  width: 95%;
   margin: 2% auto;
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
   overflow: scroll;
 }

@@ -11,10 +11,10 @@ const Product = (props) => {
   };
   return (
     <div className={classes.Container} onClick={handleClick} id={props.id}>
-      <div className={classes.Name}>{props.name}</div>
       <img className={classes.Img} alt="" src={props.source} />
-      <div className={classes.Text}>{props.description}</div>
+      <div className={classes.Name}>{props.name}</div>
       <div className={classes.Price}>£{props.price}</div>
+      <div className={classes.Text}>{props.description}</div>
     </div>
   );
 };

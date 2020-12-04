@@ -5,6 +5,7 @@ import ProductPopUp from "./Containers/ProductPopUp/ProductPopUp";
 import Login from "./Componants/Login/Login";
 import Cart from "./Componants/Cart/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Checkout from "./Componants/Checkout/Checkout";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact component={AllProducts} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/cart/checkout" exact component={Checkout} />
         </Switch>
         <ProductPopUp />
         <Login />

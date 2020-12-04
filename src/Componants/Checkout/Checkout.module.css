@@ -1,0 +1,69 @@
+.Container {
+  height: 60%;
+  width: 40%;
+  margin: 5% auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Form {
+  height: 100%;
+  width: 100%;
+}
+
+.Form1 h3,
+.Form2 h3 {
+  margin: 0 auto;
+  height: 10%;
+}
+
+.Form1 {
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: all 1s;
+}
+
+.Form1 input {
+  width: 60%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.Form1 button {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.Form2 {
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 100%;
+  bottom: 100%;
+  justify-content: space-evenly;
+  transition: all 1s;
+}
+
+.Form2 input {
+  width: 80%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.Form2 button {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

@@ -3,35 +3,25 @@
   width: 80%;
   border: navy 2px solid;
   margin: 2% auto;
-  display: flex;
-  flex-direction: column;
   text-align: center;
 }
 
 .ItemsContainer {
   box-sizing: border-box;
   overflow: scroll;
-  height: 50%;
+  height: 85%;
   width: 70%;
-  margin: 0 auto;
-  margin-bottom: 2%;
-  border: 2px black solid;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 
-.Container h4 {
-  font-size: 250%;
-  margin: 1% 0;
-}
-
 .ItemContainer {
-  border: 2px black solid;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
-  height: 30%;
+  height: 20%;
   margin: 1% auto;
 }
 
@@ -41,11 +31,11 @@
 
 .Header {
   box-sizing: border-box;
+  margin: 0.5% 0;
   list-style: none;
   display: flex;
   justify-content: space-around;
   width: 70%;
-  margin: 0% auto 0.5%;
   border: 2px black solid;
   font-size: 150%;
 }
@@ -53,7 +43,7 @@
 /* HEADERs*/
 
 .ImgHeader {
-  width: 25%;
+  width: 10%;
 }
 
 .ItemHeader {
@@ -63,7 +53,7 @@
 }
 
 .QuantityHeader {
-  width: 25%;
+  width: 30%;
 }
 
 .TotalHeader {
@@ -84,7 +74,15 @@
 
 .Quantity {
   font-size: 170%;
-  width: 25%;
+  width: 30%;
+  padding-left: 2%;
+}
+
+.Quantity ion-icon {
+  margin-left: 0%;
+  position: relative;
+  left: 10%;
+  font-size: 90%;
 }
 
 .Cost {
@@ -116,17 +114,21 @@
   font-size: 170%;
   width: 20%;
   border: 2px black solid;
-  position: sticky;
-  bottom: 7%;
-  left: 64%;
+  float: right;
+  position: relative;
+  bottom: 20%;
+  right: 5.5%;
 }
 .Checkout {
   font-size: 170%;
   width: 20%;
   border: 2px black solid;
-  position: sticky;
-  margin-top: 1%;
-  left: 64%;
+  color: black;
+  float: right;
+  position: relative;
+  bottom: 10%;
+  left: 15%;
+  text-decoration: none;
 }
 
 .Checkout:hover {
