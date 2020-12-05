@@ -8,7 +8,7 @@
 .PopUp {
   height: 70%;
   width: 60%;
-  background-color: rgb(122, 38, 38);
+  background-color: lightblue;
   z-index: 200;
   position: absolute;
   bottom: 10%;
@@ -20,7 +20,7 @@
   height: 75%;
   width: 100%;
   margin: auto;
-  background-color: cadetblue;
+  background-color: lightblue;
   font-size: 200%;
   display: flex;
   flex-flow: column wrap;
@@ -68,14 +68,14 @@
   font-size: 100%;
 }
 
-h3 {
+.EditCart h3 {
   cursor: pointer;
   border: 1px white solid;
   height: 33%;
   padding-top: 1%;
 }
 
-h3:hover {
+.EditCart h3:hover {
   color: white;
   background-color: grey;
 }

@@ -24,7 +24,7 @@ const Cart = () => {
           if (newCart[i].quantity === 1) return;
           newCart[i].quantity -= 1;
         } else if (action === "remove") {
-          newCart.pop(i);
+          newCart.splice(i, 1);
         }
       }
     }
@@ -90,12 +90,6 @@ const Cart = () => {
 
   return (
     <div className={classes.Container}>
-      <ul className={classes.Header}>
-        <li className={classes.ImgHeader}></li>
-        <li className={classes.ItemHeader}>Item</li>
-        <li className={classes.QuantityHeader}>Quantity</li>
-        <li className={classes.TotalHeader}>Total</li>
-      </ul>
       <div className={classes.ItemsContainer}>{renderItems}</div>
       <div className={classes.Total}>£{total}</div>
       <Link
@@ -109,3 +103,12 @@ const Cart = () => {
 };
 
 export default Cart;
+
+/*
+ <ul className={classes.Header}>
+<li className={classes.ImgHeader}></li>
+<li className={classes.ItemHeader}>Item</li>
+<li className={classes.QuantityHeader}>Quantity</li>
+<li className={classes.TotalHeader}>Total</li>
+</ul> 
+*/
