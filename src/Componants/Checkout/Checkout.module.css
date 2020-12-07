@@ -71,7 +71,8 @@
   color: white;
   border: none;
   height: 30px;
-  width: 70px;
+  width: 80px;
+  border-radius: 7%;
 }
 
 .ButtonNext {
@@ -79,5 +80,6 @@
   color: white;
   border: none;
   height: 30px;
-  width: 70px;
+  width: 80px;
+  border-radius: 7%;
 }

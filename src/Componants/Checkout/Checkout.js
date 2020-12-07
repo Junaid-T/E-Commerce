@@ -1,10 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./Checkout.module.css";
 import { StoreContext } from "../../Contexts/store";
 import { AuthorizedContext } from "../../Contexts/Authorized";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import Confirmation from "./Confirmation/Confirmation";
 
-const Checkout = () => {
+const Checkout = (props) => {
+  const [confirmed, setConfirmed] = useState(false);
   const [authorized] = useContext(AuthorizedContext);
   const [, , , cart, setCart, total, setTotal] = useContext(StoreContext);
 
@@ -20,6 +22,9 @@ const Checkout = () => {
 
   const confirmOrder = (e) => {
     e.preventDefault();
+    setConfirmed(true);
+    setCart([]);
+    setTotal(0);
   };
 
   const form1 = (
@@ -102,7 +107,17 @@ const Checkout = () => {
     </form>
   );
 
-  return <div className={classes.Container}>{form1}</div>;
+  return (
+    <div className={classes.Container}>
+      {confirmed ? (
+        <Confirmation />
+      ) : !cart.length > 0 ? (
+        <Redirect to="/" />
+      ) : (
+        form1
+      )}
+    </div>
+  );
 };
 
 export default Checkout;
