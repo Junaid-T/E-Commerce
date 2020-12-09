@@ -28,10 +28,6 @@
   color: rgb(70, 28, 28);
 }
 
-.LinkContainer li:hover {
-  color: black;
-}
-
 .Link {
   margin: 0 2%;
   width: 30%;
@@ -39,7 +35,7 @@
 }
 
 .Link:hover {
-  background-color: grey;
+  border-bottom: 3px solid rgb(26, 26, 182);
 }
 
 .Navigation ion-icon {
@@ -52,8 +48,8 @@
   left: 30%;
 }
 
-ion-icon:hover {
+.Navigation ion-icon:hover {
   color: white;
-  background-color: orange;
+  background-color: rgb(82, 82, 151);
   cursor: pointer;
 }

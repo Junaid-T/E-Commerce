@@ -61,6 +61,7 @@ const ProductPopUp = (props) => {
   ////////////////////////////////
   // Close backdrop
   const closeBackdrop = () => {
+    SetQuantity(1);
     setActiveItem(null);
   };
 

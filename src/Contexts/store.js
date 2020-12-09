@@ -107,7 +107,6 @@ export const StoreProvider = (props) => {
   const [activeItem, setActiveItem] = useState(null);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  //   const [Authorized, setAuthorized] = useState(false);
 
   ////////////////////////////////////////////////////////////////////////////////////
 
