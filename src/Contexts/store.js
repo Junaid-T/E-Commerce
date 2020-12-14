@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from "axios";
 ///////////////////////////////////////////////////////////////////////////
 
@@ -13,6 +13,7 @@ import Sunglasses from "../Assets/Products/Sunglasses.jpg";
 import Tent from "../Assets/Products/Tent.jpg";
 import ULetter from "../Assets/Products/U.jpg";
 
+// Temporarily hardcode products in - working on backend
 const products = {
   item1: {
     name: "Backpack",
@@ -89,6 +90,7 @@ const products = {
 
 export const StoreContext = createContext();
 
+// OLD GET FUNCTIONS - LEAVE FOR NOW - MAY REUSE FIREBASE AT A LATER POINT
 ///////////////////////////////////////////////////////////////////////////
 // const getData = async function () {
 //   try {
@@ -118,15 +120,15 @@ export const StoreProvider = (props) => {
   /////////////////////////////////////////
   return (
     <StoreContext.Provider
-      value={[
-        allProducts,
-        activeItem,
-        setActiveItem,
-        cart,
-        setCart,
-        total,
-        setTotal,
-      ]}
+      value={{
+        allProducts: allProducts,
+        activeItem: activeItem,
+        setActiveItem: setActiveItem,
+        cart: cart,
+        setCart: setCart,
+        total: total,
+        setTotal: setTotal,
+      }}
     >
       {props.children}
     </StoreContext.Provider>

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, Fragment } from "react";
+import React, { useContext } from "react";
 import classes from "./AllProducts.module.css";
 import Product from "./Product/Product";
 import { StoreContext } from "../../Contexts/store";
@@ -7,12 +7,12 @@ import { StoreContext } from "../../Contexts/store";
 //////////////////////////////////////////
 
 const AllProducts = (props) => {
-  const [allProducts] = useContext(StoreContext);
+  const store = useContext(StoreContext);
 
   let complete = null;
-  if (allProducts) {
+  if (store.allProducts) {
     // for each items in stock - return a product componant
-    complete = Object.values(allProducts).map((o) => {
+    complete = Object.values(store.allProducts).map((o) => {
       return (
         <Product
           name={o.name}

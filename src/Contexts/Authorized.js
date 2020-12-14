@@ -8,7 +8,12 @@ export const AuthorizedProvider = (props) => {
 
   return (
     <AuthorizedContext.Provider
-      value={[authorized, setAuthorized, popup, setPopup]}
+      value={{
+        authorized: authorized,
+        setAuthorized: setAuthorized,
+        popup: popup,
+        setPopup: setPopup,
+      }}
     >
       {props.children}
     </AuthorizedContext.Provider>

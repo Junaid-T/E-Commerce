@@ -4,17 +4,16 @@ import Backdrop from "./Backdrop/Backdrop";
 import { StoreContext } from "../../Contexts/store";
 
 const ProductPopUp = (props) => {
-  const [allProducts, activeItem, setActiveItem, cart, setCart] = useContext(
-    StoreContext
-  );
+  const store = useContext(StoreContext);
   let [quantity, SetQuantity] = useState(1);
 
   ///////////////////////////////////////////////////////////
-  // Set Popup
+  // This determines what the active item in the store is and gets its id to use.
+  // It then return the JSX with the active items details.
   let selected = null;
-  if (activeItem) {
-    const item = Object.values(allProducts).filter((o) => {
-      return o.id === activeItem;
+  if (store.activeItem) {
+    const item = Object.values(store.allProducts).filter((o) => {
+      return o.id === store.activeItem;
     });
 
     selected = (
@@ -26,8 +25,6 @@ const ProductPopUp = (props) => {
       </div>
     );
   }
-
-  const show = activeItem ? classes.ContainerShow : classes.Container;
 
   const handleQuantity = (event) => {
     if (event.target.id === "+") {
@@ -41,9 +38,12 @@ const ProductPopUp = (props) => {
   ///////////////////////////////////////////////////////////
   // Add to cart
 
+  // This function works out whether there is already some of the active item in the cart
+  // If so it increases the amount of it by what the user asks
+  // If not then it add a new instance of the active item.
   const addToCart = () => {
-    let newOrder = { id: activeItem, quantity: quantity };
-    let newCart = [...cart, newOrder];
+    let newOrder = { id: store.activeItem, quantity: quantity };
+    let newCart = [...store.cart, newOrder];
     if (newCart.length > 1) {
       for (let i = 0; i < newCart.length - 1; i++) {
         if (newCart[i].id === newOrder.id) {
@@ -53,8 +53,9 @@ const ProductPopUp = (props) => {
       }
     }
 
-    setCart(newCart);
-    setActiveItem(null);
+    // Adds to cart and closes popup window
+    store.setCart(newCart);
+    store.setActiveItem(null);
     SetQuantity(1);
   };
 
@@ -62,11 +63,11 @@ const ProductPopUp = (props) => {
   // Close backdrop
   const closeBackdrop = () => {
     SetQuantity(1);
-    setActiveItem(null);
+    store.setActiveItem(null);
   };
 
   return (
-    <div className={show}>
+    <div>
       <Backdrop closeBackdrop={closeBackdrop} />
       <div className={classes.PopUp}>
         {selected}

@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import "./App.css";
 import NavBar from "./Componants/NavBar/NavBar";
 import AllProducts from "./Containers/AllProducts/AllProducts";
@@ -6,8 +7,13 @@ import Login from "./Componants/Login/Login";
 import Cart from "./Componants/Cart/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Checkout from "./Componants/Checkout/Checkout";
+import { StoreContext } from "./Contexts/store";
+import { AuthorizedContext } from "./Contexts/Authorized";
 
 function App() {
+  const store = useContext(StoreContext);
+  const auth = useContext(AuthorizedContext);
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -17,8 +23,8 @@ function App() {
           <Route path="/cart" exact component={Cart} />
           <Route path="/cart/checkout" exact component={Checkout} />
         </Switch>
-        <ProductPopUp />
-        <Login />
+        {store.activeItem ? <ProductPopUp /> : null}
+        {auth.popup ? <Login /> : null}
       </div>
     </BrowserRouter>
   );

@@ -4,10 +4,11 @@ import classes from "./Product.module.css";
 import { StoreContext } from "../../../Contexts/store";
 
 const Product = (props) => {
-  const [, , setActiveItem] = useContext(StoreContext);
+  const store = useContext(StoreContext);
 
+  // Setting an active item here causes the popup to be rendered in App.js
   const handleClick = (event) => {
-    setActiveItem(props.id);
+    store.setActiveItem(props.id);
   };
   return (
     <div className={classes.Container} onClick={handleClick} id={props.id}>
@@ -20,6 +21,3 @@ const Product = (props) => {
 };
 
 export default Product;
-//
-//
-// POP UP SHOULD NOT BE A CHILD OF THIS. SHOULD BE SEPARATE BUT GET THE STATE.

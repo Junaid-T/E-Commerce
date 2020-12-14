@@ -1,9 +1,10 @@
 import classes from "./Confirmation.module.css";
 import React from "react";
 import uniqid from "uniqid";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Confirmation = () => {
+  // A simple conformation message with a random order ID.
   return (
     <div className={classes.Container}>
       <h3>Order Confirmation</h3>

@@ -5,10 +5,10 @@ import { AuthorizedContext } from "../../Contexts/Authorized";
 import Logo from "../../Assets/Logo/logo_transparent.png";
 
 const NavBar = () => {
-  const [, , , setPopup] = useContext(AuthorizedContext);
+  const auth = useContext(AuthorizedContext);
 
   const openPopup = () => {
-    setPopup(true);
+    auth.setPopup(true);
   };
 
   return (
