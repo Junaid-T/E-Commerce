@@ -1,0 +1,41 @@
+.Form {
+  height: 75%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 3.3% auto 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 200%;
+}
+
+.Email {
+  width: 80%;
+  height: 8%;
+  font-size: 90%;
+}
+
+.Password {
+  width: 80%;
+  height: 8%;
+  font-size: 90%;
+}
+
+.Submit {
+  height: 8%;
+  width: 30%;
+  font-size: 50%;
+}
+
+@media only screen and (max-width: 762px) {
+  .Submit {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Email,
+  .Password {
+    font-size: 60%;
+  }
+}

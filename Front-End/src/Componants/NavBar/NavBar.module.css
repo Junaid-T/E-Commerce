@@ -1,0 +1,82 @@
+.Navigation {
+  height: 15%;
+  width: 100vw;
+  background-color: lightblue;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 2.5vw;
+  letter-spacing: 2px;
+}
+
+.Logo {
+  height: 100%;
+}
+
+.LinkContainer {
+  height: 50%;
+  width: 50%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  color: black;
+}
+
+.Link {
+  margin: 0 2%;
+  width: 40%;
+  text-decoration: none;
+  color: black;
+}
+
+.Link:hover {
+  border-bottom: 3px solid rgb(26, 26, 182);
+}
+
+.Navigation ion-icon {
+  height: 35px;
+  width: 35px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 93%;
+}
+
+.Navigation ion-icon:hover {
+  color: white;
+  background-color: rgb(82, 82, 151);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navigation {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .Navigation {
+    font-size: 4vw;
+  }
+  .Link {
+    width: 50%;
+  }
+  .LinkContainer {
+    width: 60%;
+    align-items: flex-end;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .Navigation ion-icon {
+    height: 27px;
+    width: 27px;
+  }
+
+  .LinkContainer {
+    font-size: 130%;
+    position: relative;
+    right: 5%;
+  }
+}

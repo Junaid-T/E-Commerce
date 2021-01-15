@@ -1,0 +1,33 @@
+.Container {
+  height: 40%;
+  width: 80%;
+  border-bottom: 1px rgb(196, 166, 166) solid;
+  margin: 2% auto;
+}
+
+.Container h3 {
+  font-size: 30px;
+}
+
+.Container p {
+  font-size: 20px;
+}
+
+.Continue {
+  text-decoration: none;
+  border-radius: 7%;
+  height: 18%;
+  width: 35%;
+  border: 1px solid black;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  float: right;
+  padding-top: 2%;
+  position: relative;
+  top: 5%;
+}
+
+.Continue:hover {
+  background-color: rgb(221, 0, 0);
+}
